@@ -1,4 +1,5 @@
 #!/usr/bin/node
+/* eslint-disable no-undef */
 const request = require('request');
 const movieId = process.argv[2];
 // Set up the options for the API request
