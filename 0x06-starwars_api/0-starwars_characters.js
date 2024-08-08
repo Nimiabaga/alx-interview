@@ -9,7 +9,7 @@ const categories = {
 };
 
 // Make the initial request to get the movie details
-request(categories, function (error, response, body) {
+request(categories, function (error, _response, body) {
   if (!error) {
     const characters = JSON.parse(body).characters;
     printCharacters(characters, 0);
@@ -18,7 +18,7 @@ request(categories, function (error, response, body) {
 
 // Function to print characters recursively
 function printCharacters (characters, index) {
-  request(characters[index], function (error, response, body) {
+  request(characters[index], function (error, _response, body) {
     if (!error) {
       console.log(JSON.parse(body).name);
       if (index + 1 < characters.length) {
